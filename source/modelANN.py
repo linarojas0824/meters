@@ -1,5 +1,4 @@
-import sys
-sys.path.append('/Users/linarojas/Desktop/GitHub/meters/source')
+import numpy as np
 from source.data_preprocess import DataPreprocessing
 from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import accuracy_score
@@ -10,8 +9,7 @@ class ModelANN(DataPreprocessing):
 
     def dt(self, X_train, X_test, y_train, y_test):
         #Create DT model
-        MANN_classifier = MLPClassifier(hidden_layer_sizes=(100,),
-                                      activation='logistic',solver='lbfgs',batch_size='auto')
+        MANN_classifier = MLPClassifier()
 
         #Train the model
         MANN_classifier.fit(X_train, y_train)
@@ -21,7 +19,7 @@ class ModelANN(DataPreprocessing):
 
         error = 0
         for i in range(len(y_test)):
-            error += np.sum(DT_predicted != y_test)
+            error = np.sum(DT_predicted != y_test)
 
         total_accuracy = 1 - error / len(y_test)
 
