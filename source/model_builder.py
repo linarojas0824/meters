@@ -1,11 +1,11 @@
 
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.neural_network import MLPClassifier
 import numpy as np
 from sklearn.metrics import accuracy_score
+from sklearn.neural_network import MLPClassifier
 
 
-from source.data_preprocess import DataPreprocessing
+from data_preprocess import DataPreprocessing
 
 
 
