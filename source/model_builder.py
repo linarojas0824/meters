@@ -2,9 +2,10 @@
 from sklearn.tree import DecisionTreeClassifier
 import numpy as np
 from sklearn.metrics import accuracy_score
+from sklearn.neural_network import MLPClassifier
 
 
-from source.data_preprocess import DataPreprocessing
+from data_preprocess import DataPreprocessing
 
 
 
@@ -32,3 +33,4 @@ class ModelBuilder(DataPreprocessing):
         self.accuracy = accuracy_score(y_test, DT_predicted)
 
         return DT_classifier
+
